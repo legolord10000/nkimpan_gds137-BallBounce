@@ -41,11 +41,15 @@ function animate()
     }
 
     player.move();
-    if (player.x > canvas.width+ player.width/2)
+    if (player.x > canvas.width -player.width/2)
         {
-            player.x = -player.width/2
+            player.vx=-4
         }
- 
+        else if (player.x < player.width/2)
+        {
+            player.vx=4
+        }
+       
        // NPC1 collision
     if (npc1.collisionCheck(player))
         {
